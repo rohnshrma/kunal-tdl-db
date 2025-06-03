@@ -51,23 +51,23 @@
             <!-- An unordered list (<ul>) to display tasks -->
 
             <% if (typeof tasks===typeof []){ %>
-                <!-- EJS conditional: Checks if `all_tasks` is an array (i.e., tasks exist) -->
-                <!-- `typeof all_tasks===typeof []` compares the type of `all_tasks` to the type of an empty array -->
+                <!-- EJS conditional: Checks if `tasks` is an array (i.e., tasks exist) -->
+                <!-- `typeof tasks===typeof []` compares the type of `tasks` to the type of an empty array -->
                 <% tasks.forEach((task)=> { %>
-                    <!-- EJS loop: Iterates over each task in the `all_tasks` array -->
-                    <!-- `forEach` calls a function for each element, with `task` as the current item and `index` as its position -->
+                    <!-- EJS loop: Iterates over each task in the `tasks` array -->
+                    <!-- `forEach` calls a function for each element, with `task` as the current item -->
                     <li class="d-flex align-items-center justify-content-between">
                         <!-- A list item (<li>) for each task, using Bootstrap flexbox classes to arrange content -->
                         <%= task.name %>
                             <!-- Displays the task text, injected dynamically using EJS -->
                             <a href="/delete/<%= task._id %>" class="btn btn-sm btn-danger">X</a>
                             <!-- A link styled as a small red button (`btn-sm`, `btn-danger`) to delete the task -->
-                            <!-- `href="/delete/<%= task._id %>"`: Links to the delete route with the task's index as a parameter -->
+                            <!-- `href="/delete/<%= task._id %>"`: Links to the delete route with the task's unique ID as a parameter -->
                     </li>
                     <% }); %>
                         <!-- Closes the EJS loop -->
                         <%}else{%>
-                            <!-- If `all_tasks` is not an array (e.g., it's a string like "No Tasks Found") -->
+                            <!-- If `tasks` is not an array (e.g., it's a string like "No Tasks Found") -->
                             <li>No Items Found</li>
                             <!-- Displays a list item with the message "No Items Found" -->
                             <%}%>
