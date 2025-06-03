@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Applies to all elements (* is a universal selector) */
+/* Resets default margins and padding to 0 for consistent spacing across browsers */
+
+body {
+  min-height: 100vh;
+  /* Sets the minimum height of the body to 100% of the viewport height (vh = viewport height) */
+  /* Ensures the background covers the entire page, even if content is short */
+  background: linear-gradient(45deg, teal 50%, wheat 50%);
+  /* Applies a linear gradient background, transitioning at a 45-degree angle */
+  /* From teal (50% of the way) to wheat (remaining 50%) */
+}
+
+.create {
+  width: 50%;
+  /* Sets the width of the .create div (form container) to 50% of its parent */
+  margin: 4rem auto;
+  /* Centers the div horizontally (auto) with 4rem top/bottom margin */
+  background: rgba(255, 255, 255, 0.25);
+  /* Sets a semi-transparent white background (RGBA: red, green, blue, alpha) */
+  /* 0.25 alpha makes it 25% opaque (see-through) */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* Adds a shadow for a 3D effect: 0px horizontal offset, 8px vertical, 32px blur, 0px spread */
+  backdrop-filter: blur(6px);
+  /* Applies a blur effect to the content behind the div (glassmorphism effect) */
+  -webkit-backdrop-filter: blur(6px);
+  /* Vendor prefix for compatibility with WebKit browsers (e.g., Safari) */
+  border-radius: 10px;
+  /* Rounds the corners of the div with a 10px radius */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* Adds a 1px semi-transparent white border for a subtle outline */
+}
+
+.create input {
+  width: 80%;
+  /* Sets the input field inside .create to 80% of the container's width */
+}
+.create button {
+  width: 20%;
+  /* Sets the button inside .create to 20% of the container's width */
+}
+
+.main {
+  width: 50%;
+  /* Sets the width of the .main div (task list container) to 50% of its parent */
+  margin: 4rem auto;
+  /* Centers the div horizontally with 4rem top/bottom margin */
+  background: rgba(255, 255, 255, 0.25);
+  /* Same semi-transparent background as .create */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* Same shadow as .create */
+  backdrop-filter: blur(6px);
+  /* Same blur effect as .create */
+  -webkit-backdrop-filter: blur(6px);
+  /* Same WebKit compatibility */
+  border-radius: 10px;
+  /* Same rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  /* Same border */
+}
+.main ul {
+  border-radius: 4px;
+  /* Rounds the corners of the <ul> (task list) with a 4px radius */
+  list-style: none;
+  /* Removes default bullet points from the unordered list */
+  padding: 0;
+  /* Removes default padding */
+  margin: 0;
+  /* Removes default margin */
+  background-color: #fff;
+  /* Sets the background of the <ul> to solid white for contrast */
+}
+
+.main ul li {
+  padding: 1rem;
+  /* Adds 1rem padding inside each <li> (task item) for spacing */
+  border-bottom: 1px solid #ccc;
+  /* Adds a 1px light gray border below each <li> to separate tasks */
+}
+
+.main ul li:last-child {
+  border: none;
+}
