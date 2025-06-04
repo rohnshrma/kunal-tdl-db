@@ -82,6 +82,19 @@ app.post("/", (req, res) => {
   });
 });
 
+app.get("/delete/:id", (req, res) => {
+  const deleteId = req.params.id;
+  Task.findByIdAndDelete(deleteId)
+    .then((deletedTask) => {
+      console.log(deletedTask);
+      res.redirect("/");
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect("/");
+    });
+});
+
 app.listen(PORT, () => {
   // Starts the Express server, listening for requests on the specified PORT (3000)
   console.log("server started on port : ", PORT);
